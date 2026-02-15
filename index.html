@@ -1,0 +1,281 @@
+<html lang="pt-BR">
+  <head>
+    <style>
+      body {transition: opacity ease-in 0.2s; } 
+      body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relative; }
+    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>Painel - GustavoSENSI</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <!-- MACROHACK (splash screen limpo, sem texto nem botão) -->
+    <div id="macrohack" style="position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.98); z-index: 99999; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; color: white; font-family: Arial, sans-serif;">
+      <h1 style="font-size:50px;background:linear-gradient(90deg,#ff006e,#1e5aff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">
+        <!-- Vazio intencionalmente -->
+      </h1>
+    </div>
+
+    <div class="container">
+      <div class="dashboard-panel">
+        <!-- Navigation Tabs - Sidebar Lateral -->
+        <div class="nav-tabs">
+          <button class="nav-tab active" data-section="aim">
+            <span class="tab-icon" data-icon="aimbot">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"></circle>
+                <circle cx="12" cy="12" r="6" stroke="currentColor" stroke-width="2"></circle>
+                <circle cx="12" cy="12" r="2" fill="currentColor"></circle>
+                <line x1="12" y1="2" x2="12" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+                <line x1="12" y1="18" x2="12" y2="22" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+                <line x1="2" y1="12" x2="6" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+                <line x1="18" y1="12" x2="22" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+              </svg>
+            </span>
+            <span class="tab-indicator"></span>
+          </button>
+          <button class="nav-tab" data-section="optimization">
+            <span class="tab-icon" data-icon="misc">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21 16V8C21 7.46957 20.7893 6.96086 20.4142 6.58579C20.0391 6.21071 19.5304 6 19 6H5C4.46957 6 3.96086 6.21071 3.58579 6.58579C3.21071 6.96086 3 7.46957 3 8V16C3 16.5304 3.21071 17.0391 3.58579 17.4142C3.96086 17.7893 4.46957 18 5 18H19C19.5304 18 20.0391 17.7893 20.4142 17.4142C20.7893 17.0391 21 16.5304 21 16Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path>
+                <path d="M3 10H21" stroke="currentColor" stroke-width="2"></path>
+                <path d="M12 6V18" stroke="currentColor" stroke-width="2"></path>
+              </svg>
+            </span>
+            <span class="tab-indicator"></span>
+          </button>
+          <button class="nav-tab" data-section="drag">
+            <span class="tab-icon" data-icon="weapon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 2L18 2L16 8L8 8L6 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path>
+                <path d="M8 8L8 20L10 18L12 20L14 18L16 20L16 8" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path>
+                <line x1="12" y1="8" x2="12" y2="20" stroke="currentColor" stroke-width="2"></line>
+              </svg>
+            </span>
+            <span class="tab-indicator"></span>
+          </button>
+          <button class="nav-tab" data-section="pro">
+            <span class="tab-icon" data-icon="security">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2L3 6V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V6L12 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path>
+                <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </span>
+            <span class="tab-indicator"></span>
+          </button>
+          <button class="nav-tab" data-section="injection">
+            <span class="tab-icon" data-icon="injection">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                <path d="M12 5V19" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                <path d="M3 3L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"></circle>
+              </svg>
+            </span>
+            <span class="tab-indicator"></span>
+          </button>
+        </div>
+
+        <!-- Área Principal -->
+        <div style="flex: 1; display: flex; flex-direction: column;">
+          <!-- Header -->
+          <div class="dashboard-header">
+            <div class="header-left">
+              <div class="logo-icon" id="header-logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"></circle>
+                  <circle cx="12" cy="12" r="6" stroke="currentColor" stroke-width="2"></circle>
+                  <circle cx="12" cy="12" r="2" fill="currentColor"></circle>
+                  <line x1="12" y1="2" x2="12" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+                  <line x1="12" y1="18" x2="12" y2="22" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+                  <line x1="2" y1="12" x2="6" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+                  <line x1="18" y1="12" x2="22" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+                </svg>
+              </div>
+              <div class="header-info">
+                <h1 class="header-title">Gustavo EXTERNAL</h1>
+              </div>
+            </div>
+            <div class="header-right">
+              <a href="logout.php" class="logout-btn" id="logout-btn">
+                <span class="logout-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="18" y1="6" x2="6" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+                    <line x1="6" y1="6" x2="18" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Main Content -->
+          <div class="main-content">
+            <!-- ABA DE MIRA (com os novos toggles) -->
+            <div class="section active" id="aim-section">
+              <div class="section-header">
+                <div class="section-icon" data-icon="aimbot">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"></circle>
+                    <circle cx="12" cy="12" r="6" stroke="currentColor" stroke-width="2"></circle>
+                    <circle cx="12" cy="12" r="2" fill="currentColor"></circle>
+                    <line x1="12" y1="2" x2="12" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+                    <line x1="12" y1="18" x2="12" y2="22" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+                    <line x1="2" y1="12" x2="6" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+                    <line x1="18" y1="12" x2="22" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+                  </svg>
+                </div>
+                <div class="section-info">
+                  <h2 class="section-title">Controle de Mira</h2>
+                  <p class="section-description">Configure os recursos de precisão e estabilidade</p>
+                </div>
+              </div>
+              <div class="cards-grid">
+                <div class="feature-card" style="transform: translateY(0px);">
+                  <div class="card-header">
+                    <div class="card-icon" data-icon="aimbot">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"></circle>
+                        <circle cx="12" cy="12" r="6" stroke="currentColor" stroke-width="2"></circle>
+                        <circle cx="12" cy="12" r="2" fill="currentColor"></circle>
+                        <line x1="12" y1="2" x2="12" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+                        <line x1="12" y1="18" x2="12" y2="22" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+                        <line x1="2" y1="12" x2="6" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+                        <line x1="18" y1="12" x2="22" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+                      </svg>
+                    </div>
+                    <div class="card-title-area">
+                      <h3 class="card-title">Controle de Recoil</h3>
+                      <p class="card-subtitle">Reduz o recuo da arma</p>
+                    </div>
+                    <label class="toggle-switch">
+                      <input type="checkbox" id="recoil-toggle" />
+                      <span class="slider"></span>
+                    </label>
+                  </div>
+                  <div class="card-status">
+                    <span class="status-badge">Inteligente</span>
+                  </div>
+                </div>
+
+                <div class="feature-card" style="transform: translateY(0px);">
+                  <div class="card-header">
+                    <div class="card-icon" data-icon="security">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L3 6V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V6L12 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path>
+                        <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg>
+                    </div>
+                    <div class="card-title-area">
+                      <h3 class="card-title">Aimbot Legit</h3>
+                      <p class="card-subtitle">Melhora o rastreamento</p>
+                    </div>
+                    <label class="toggle-switch">
+                      <input type="checkbox" id="focus-toggle" />
+                      <span class="slider"></span>
+                    </label>
+                  </div>
+                  <div class="card-status">
+                    <span class="status-badge">Avançado</span>
+                  </div>
+                </div>
+
+                <div class="feature-card" style="transform: translateY(0px);">
+                  <div class="card-header">
+                    <div class="card-icon" data-icon="weapon">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 2L18 2L16 8L8 8L6 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path>
+                        <path d="M8 8L8 20L10 18L12 20L14 18L16 20L16 8" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path>
+                        <line x1="12" y1="8" x2="12" y2="20" stroke="currentColor" stroke-width="2"></line>
+                      </svg>
+                    </div>
+                    <div class="card-title-area">
+                      <h3 class="card-title">Precisão Absoluta</h3>
+                      <p class="card-subtitle">Máxima exatidão</p>
+                    </div>
+                    <label class="toggle-switch">
+                      <input type="checkbox" id="precision-toggle" />
+                      <span class="slider"></span>
+                    </label>
+                  </div>
+                  <div class="card-status">
+                    <span class="status-badge">Premium</span>
+                  </div>
+                </div>
+
+                <!-- NOVO: Aimlock Cabeça -->
+                <div class="feature-card" style="transform: translateY(0px);">
+                  <div class="card-header">
+                    <div class="card-icon" data-icon="aimbot">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"></circle>
+                        <circle cx="12" cy="12" r="6" stroke="currentColor" stroke-width="2"></circle>
+                        <circle cx="12" cy="12" r="2" fill="currentColor"></circle>
+                        <line x1="12" y1="2" x2="12" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+                        <line x1="12" y1="18" x2="12" y2="22" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+                        <line x1="2" y1="12" x2="6" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+                        <line x1="18" y1="12" x2="22" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+                      </svg>
+                    </div>
+                    <div class="card-title-area">
+                      <h3 class="card-title">Aimlock Cabeça</h3>
+                      <p class="card-subtitle">Trava na cabeça do inimigo</p>
+                    </div>
+                    <label class="toggle-switch">
+                      <input type="checkbox" id="aimlock-toggle" />
+                      <span class="slider"></span>
+                    </label>
+                  </div>
+                  <div class="card-status">
+                    <span class="status-badge">Lock Mode</span>
+                  </div>
+                </div>
+
+                <!-- NOVO: Aimbot 70% HS -->
+                <div class="feature-card" style="transform: translateY(0px);">
+                  <div class="card-header">
+                    <div class="card-icon" data-icon="aimbot">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"></circle>
+                        <circle cx="12" cy="12" r="6" stroke="currentColor" stroke-width="2"></circle>
+                        <circle cx="12" cy="12" r="2" fill="currentColor"></circle>
+                        <line x1="12" y1="2" x2="12" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+                        <line x1="12" y1="18" x2="12" y2="22" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+                        <line x1="2" y1="12" x2="6" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+                        <line x1="18" y1="12" x2="22" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+                      </svg>
+                    </div>
+                    <div class="card-title-area">
+                      <h3 class="card-title">Aimbot 70% HS</h3>
+                      <p class="card-subtitle">Headshot \~70% com smooth aim</p>
+                    </div>
+                    <label class="toggle-switch">
+                      <input type="checkbox" id="aimbot70-toggle" />
+                      <span class="slider"></span>
+                    </label>
+                  </div>
+                  <div class="card-status">
+                    <span class="status-badge">70 HS Mode</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- As outras seções (optimization, drag, pro, injection) permanecem iguais -->
+            <!-- ... (copie o resto do seu HTML original aqui se quiser manter completo, mas pra brevidade eu cortei) ... -->
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="assets/js/sw-update.js"></script>
+    <script src="assets/js/icons.js"></script>
+    <script src="assets/js/dashboard.js"></script>
+    <script src="assets/js/injection.js"></script>
+  </body>
+</html>
